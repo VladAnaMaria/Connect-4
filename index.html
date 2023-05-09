@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>connect-4</title>
+</head>
+
+<body style="background-color:#d6dce2">
+    <h1>Connect 4</h1>
+    <div class="board-game">
+        <div id="player-turn"></div>
+        <div id="player-ball"></div>
+        <div id="board-box"></div>
+        <div id="stopwatch" class="displayStopwatch"></div>
+        <img src="restart.png" alt="restartImg" class="restart" onclick="location.reload()";/>
+    </div>
+    <div class="start-screen">
+        <button id="start" onclick="generateBoard()">Play!</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
