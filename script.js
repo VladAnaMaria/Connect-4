@@ -76,12 +76,21 @@ function clickCol(colId) {
     }
 }
 
+//check equality for coordinates
+
+function equalityCheck(x, y, z, w) {
+    if (x != 0 && x == y && y == z && z == w) {
+        return true;
+    }
+    return false;
+}
+
 //check winner
 function checkWin() {
     //horizontally
     for (let i = 0; i < totalRow; ++i) {
         for (let j = 0; j < totalColumn - 3; ++j) {
-            if(board[i][j] != 0 && board[i][j] == board[i][j + 1] && board[i][j + 1] == board[i][j + 2] && board[i][j + 2] == board[i][j + 3]) {
+            if (equalityCheck(board[i][j], board[i][j + 1], board[i][j + 2], board[i][j + 3])) {
                 return 1;
             }
         }
@@ -90,7 +99,7 @@ function checkWin() {
     //vertically
     for (let j = 0; j < totalColumn; ++j) {
         for (let i = 0; i < totalRow - 3; ++i) {
-            if(board[i][j] != 0 && board[i][j] == board[i + 1][j] && board[i + 1][j] == board[i + 2][j ] && board[i + 2][j] == board[i + 3][j]) {
+            if (equalityCheck(board[i][j], board[i + 1][j], board[i + 2][j], board[i + 3][j])) {
                 return 1;
             }
         }
@@ -99,7 +108,7 @@ function checkWin() {
     //main diagonal
     for (let i = 0; i < totalRow - 3; ++i) {
         for (let j = 0; j < totalColumn - 3; ++j) {
-            if(board[i][j] != 0 && board[i][j] == board[i + 1][j + 1] && board[i + 1][j + 1] == board[i + 2][j + 2] && board[i + 2][j + 2] == board[i + 3][j + 3]) {
+            if (equalityCheck(board[i][j], board[i + 1][j + 1], board[i + 2][j + 2], board[i + 3][j + 3])) {
                 return 1;
             }
         }
@@ -108,7 +117,7 @@ function checkWin() {
     //secondary diagonal
     for (let i = 3; i < totalRow; ++i) {
         for (let j = 0; j < totalColumn - 3; ++j) {
-            if(board[i][j] != 0 && board[i][j] == board[i - 1][j + 1] && board[i - 1][j + 1] == board[i - 2][j + 2] && board[i - 2][j + 2] == board[i - 3][j + 3]) {
+            if (equalityCheck(board[i][j], board[i - 1][j + 1], board[i - 2][j + 2], board[i - 3][j + 3])) {
                 return 1;
             }
         }
